@@ -1,4 +1,4 @@
-#include <glad/glad.h> // includi file header di GLAD e GLFW
+Ôªø#include <glad/glad.h> // includi file header di GLAD e GLFW
 #include <GLFW/glfw3.h>
 
 #include <iostream>
@@ -12,13 +12,17 @@ const unsigned int SCR_HEIGHT = 600;
 
 int main()
 {
-    // GLFW: inizializzazione e configurazione
+    // GLFW: libreria che fornisce una serie di funzionalit√† utili per la gestione della finestra, dell'input e 
+    // della gestione dei contesti grafici 
     
+    // inizializzazione e configurazione
+
+
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // Versione major e minor 3.3
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // Profilo principale, 
-                                                             // sottoinsieme pi˘ piccolo di funzionalit‡
+    // sottoinsieme pi√π piccolo di funzionalit√†
 
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -26,7 +30,7 @@ int main()
 
     // GLFW: creazione finestra
     // restituisce un oggetto GLFWwidow
-    
+
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
@@ -35,12 +39,13 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window); // rendiamo il contesto della nostra finestra il contesto principale
-                                    // del thread corrente
+    // del thread corrente
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // chiamiamo questa funzione ad 
-                                                                //ogni ridimensionamento della finestra
+    //ogni ridimensionamento della finestra
 
-    // GLAD: carica tutti i puntatori alle funzioni OpenGL
-    
+// GLAD:gestisce l'inizializzazione delle funzioni OpenGL e delle estensioni specifiche del contesto,
+// carica tutti i puntatori alle funzioni OpenGL
+
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
@@ -48,22 +53,22 @@ int main()
     }
 
     // Ciclo di rendering
-    // continua finchË non gli viene detto di chiudere
+    // continua finch√® non gli viene detto di chiudere
 
     while (!glfwWindowShouldClose(window))
     {
         // input
-        
+
         processInput(window);
 
         // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
-        
+
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
     // GLFW: termina e pulisce tutte le risorse allocate da glfw.
-    
+
     glfwTerminate();
     return 0;
 }
@@ -77,7 +82,7 @@ void processInput(GLFWwindow* window)
         glfwSetWindowShouldClose(window, true);
 }
 
-// glfw: ogni volta che la finestra viene modificata (dall'utente o dal SO), viene eseguita 
+// GLFW: ogni volta che la finestra viene modificata (dall'utente o dal SO), viene eseguita 
 // questa funzione di callback (listener del resize della finestra)
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
