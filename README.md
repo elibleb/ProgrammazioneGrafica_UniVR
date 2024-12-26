@@ -7,3 +7,4 @@
 ### 4.6 Crea una finestra con uno sfondo colorato
 [1_4.6.cpp](1_4.6.cpp)
 <br><br>
+<img src="MEDIA/1_4.6.png" width="400" heigth="200">
