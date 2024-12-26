@@ -4,3 +4,6 @@
 [1_4.4.cpp](1_4.4.cpp)
 <br><br>
 <img src="MEDIA/1_4.4.png" width="400" heigth="200">
+### 4.6 Crea una finestra con uno sfondo colorato
+[1_4.4.cpp](1_4.4.cpp)
+<br><br>
