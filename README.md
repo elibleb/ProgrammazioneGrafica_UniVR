@@ -9,5 +9,9 @@
 [1_4.6.cpp](1_4.6.cpp)
 <br><br>
 <img src="MEDIA/1_4.6.png" width="400" heigth="200">
-### 5.5.2 Utilizza gli shader per disegnare un triangolo nella finestra
-1_5.5.2.cpp
+### 5. Hello Triangle
+#### 5.5.2 Utilizza gli shader per disegnare un triangolo nella finestra
+[1_5.5.2.cpp](1_5.5.2.cpp)
+<br><br>
+
+
