@@ -14,5 +14,8 @@
 [1_5.5.2.cpp](1_5.5.2.cpp)
 <br><br>
 <img src="MEDIA/1_5.5_2.png" width="400" heigth="200">
+#### 5.6 Creare un rettangolo composto da due triangoli (visuale wireframe)
+[1_5.6.cpp](1_5.6.cpp)
+<br><br>
 
 
