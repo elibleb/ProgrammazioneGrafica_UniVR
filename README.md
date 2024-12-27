@@ -13,5 +13,6 @@
 #### 5.5.2 Utilizza gli shader per disegnare un triangolo nella finestra
 [1_5.5.2.cpp](1_5.5.2.cpp)
 <br><br>
+<img src="MEDIA/1_5.5_2.png" width="400" heigth="200">
 
 
