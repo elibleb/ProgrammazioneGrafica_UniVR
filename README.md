@@ -17,5 +17,7 @@
 #### 5.6 Creare un rettangolo composto da due triangoli (visuale wireframe)
 [1_5.6.cpp](1_5.6.cpp)
 <br><br>
+<img src="MEDIA/1_5.6.png" width="400" heigth="200">
+
 
 
