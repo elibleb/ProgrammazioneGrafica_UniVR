@@ -18,7 +18,7 @@
 [1_5.6.cpp](1_5.6.cpp)
 <br><br>
 <img src="MEDIA/1_5.6.png" width="400" heigth="200">
-### 5.8_1 Disegna due triangoli vicini utilizzando ‘glDrawArrays’ aggiungendo più vertici
+#### 5.8_1 Disegna due triangoli vicini utilizzando ‘glDrawArrays’ aggiungendo più vertici
 [1_5.8_1.cpp](1_5.8_1.cpp)
 <br><br>
 <img src="MEDIA/1_5.8_1.png" width="400" heigth="200">
