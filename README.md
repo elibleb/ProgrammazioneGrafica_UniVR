@@ -30,6 +30,11 @@
 [1_5.8_3.cpp](1_5.8_3.cpp)
 <br><br>
 <img src="MEDIA/1_5.8_3.png" width="400" heigth="200">
+### 6. Shaders
+### 6.3 Invio di valori dal vertex shader al fragment shader
+[1_6.3.cpp](1_6.3.cpp)
+<br><br>
+<img src="MEDIA/1_6.3.png" width="400" heigth="200">
 
 
 
