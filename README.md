@@ -26,6 +26,10 @@
 [1_5.8_2.cpp](1_5.8_2.cpp)
 <br><br>
 <img src="MEDIA/1_5.8_2.png" width="400" heigth="200">
+#### 5.8_3 Disegna due triangoli, uno di colore arancione e uno di colore giallo, usando due programmi shader che utilizzano due diversi fragment shaders
+[1_5.8_3.cpp](1_5.8_3.cpp)
+<br><br>
+<img src="MEDIA/1_5.8_3.png" width="400" heigth="200">
 
 
 
