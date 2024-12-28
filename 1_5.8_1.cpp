@@ -11,18 +11,21 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 //shaders
+//Vertex shader: Elabora i vertici (punti di un oggetto). Qui il programma prende le coordinate dei vertici (dati come aPos)
+// e le passa a OpenGL
 const char* vertexShaderSource = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "}\0";
+"layout (location = 0) in vec3 aPos;\n"
+"void main()\n"
+"{\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"}\0";
+//Fragment shader: Calcola il colore di ogni pixel. Qui il programma imposta ogni pixel a un colore arancione
 const char* fragmentShaderSource = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "void main()\n"
-    "{\n"
-    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-    "}\n\0";
+"out vec4 FragColor;\n"
+"void main()\n"
+"{\n"
+"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+"}\n\0";
 
 int main()
 {
@@ -32,7 +35,7 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // Versione major e minor 3.3
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // Profilo principale, 
-                                                             // sottoinsieme più piccolo di funzionalità
+    // sottoinsieme più piccolo di funzionalità, supporta solo le funzioni principali di OpenGL
 
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -40,7 +43,7 @@ int main()
 
     // GLFW: creazione finestra
     // restituisce un oggetto GLFWwidow
-    
+
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
@@ -49,12 +52,12 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window); // rendiamo il contesto della nostra finestra il contesto principale
-                                    // del thread corrente
+    // del thread corrente
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // chiamiamo questa funzione ad 
-                                                                //ogni ridimensionamento della finestra
+    //ogni ridimensionamento della finestra
 
-    // GLAD: carica tutti i puntatori alle funzioni OpenGL
-    
+// GLAD: carica tutti i puntatori alle funzioni OpenGL
+
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
@@ -65,7 +68,10 @@ int main()
     //COSTRUIRE E COMPILARE PROGRAMMA SHADER
     //--------------------------------------
 
+    //Vengono creati e compilati gli shader
     //vertex shader
+    // Il vertexShaderSource è il codice per il vertex shader che è stato definito sopra
+
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
@@ -80,7 +86,8 @@ int main()
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-     // fragment shader
+    // fragment shader
+    // come per fragment shader
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
@@ -93,7 +100,9 @@ int main()
         std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-    // collegare gli shader (link)
+    // collegare gli shader (link) dopo essere stati compilati
+    // vengono "attaccati" a un programma shader che li collega insieme
+    // Poi il programma shader viene linkato e verificato per eventuali errori
     unsigned int shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
@@ -128,8 +137,7 @@ int main()
 
     // VBO = Vertex Buffer Object
     // VAO = Vertex Array Object
-    // EBO = Element Buffer Object
-    unsigned int VBO, VAO;
+    unsigned int VBO, VAO;  //Memorizzano rispettivamente i dati dei vertici e gli attributi dei vertici.
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     // associare (binda) inizialmente l'oggetto Vertex Array (VBO), 
@@ -144,7 +152,7 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // adesso si pu� fare l'unbind, la chiamata a glVertexAttribPointer ha registrato VBO come oggetto buffer 
+    // adesso si può fare l'unbind, la chiamata a glVertexAttribPointer ha registrato VBO come oggetto buffer 
     // di vertice associato dell'attributo vertex, quindi possiamo separare tranquillamente
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -162,20 +170,18 @@ int main()
     while (!glfwWindowShouldClose(window))
     {
         // input
-        
+
         processInput(window);
 
-        // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
-
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // funzione che setta lo stato
-        glClear(GL_COLOR_BUFFER_BIT); // funzione che utilizza lo stato
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f); // imposta colore sfondo
+        glClear(GL_COLOR_BUFFER_BIT); // Pulire il buffer del colore
 
         //disegna il triangolo
-        glUseProgram(shaderProgram);
+        glUseProgram(shaderProgram); //usa il programma shader
         glBindVertexArray(VAO); //avendo un solo VAO non è necessario bindarlo,  lo teniamo per una 
         //migliore organizzazione
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        glDrawArrays(GL_TRIANGLES, 3, 6);
+        glDrawArrays(GL_TRIANGLES, 0, 3); //disegna il primo triangolo
+        glDrawArrays(GL_TRIANGLES, 3, 6); //disegna il secondo triangolo
         //glDrawArrays(GL_TRIANGLES, 0, 6);
 
         // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
@@ -202,7 +208,7 @@ void processInput(GLFWwindow* window)
         glfwSetWindowShouldClose(window, true);
 }
 
-// glfw: ogni volta che la finestra viene modificata (dall'utente o dal SO), viene eseguita 
+// GLFW: ogni volta che la finestra viene modificata (dall'utente o dal SO), viene eseguita 
 // questa funzione di callback (listener del resize della finestra)
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
