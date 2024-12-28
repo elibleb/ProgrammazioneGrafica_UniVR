@@ -11,28 +11,31 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 //shaders
+//vertexShader: trasforma le coordinate dei vertici da spazio oggetto a spazio di proiezione
 const char* vertexShaderSource = "#version 330 core\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "void main()\n"
-    "{\n"
-    "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-    "}\0";
+"layout (location = 0) in vec3 aPos;\n"
+"void main()\n"
+"{\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+"}\0";
+
+//fragmentShader: definisce il colore finale dei frammenti.
 const char* fragmentShaderSource = "#version 330 core\n"
-    "out vec4 FragColor;\n"
-    "void main()\n"
-    "{\n"
-    "   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-    "}\n\0";
+"out vec4 FragColor;\n"
+"void main()\n"
+"{\n"
+"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+"}\n\0";
 
 int main()
 {
     // GLFW: inizializzazione e configurazione
-    
+
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); // Versione major e minor 3.3
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // Profilo principale, 
-                                                             // sottoinsieme più piccolo di funzionalità
+    // sottoinsieme più piccolo di funzionalità
 
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
@@ -40,7 +43,7 @@ int main()
 
     // GLFW: creazione finestra
     // restituisce un oggetto GLFWwidow
-    
+
     GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
     if (window == NULL)
     {
@@ -49,12 +52,12 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window); // rendiamo il contesto della nostra finestra il contesto principale
-                                    // del thread corrente
+    // del thread corrente
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // chiamiamo questa funzione ad 
-                                                                //ogni ridimensionamento della finestra
+    //ogni ridimensionamento della finestra
 
-    // GLAD: carica tutti i puntatori alle funzioni OpenGL
-    
+// GLAD: carica tutti i puntatori alle funzioni OpenGL
+
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         std::cout << "Failed to initialize GLAD" << std::endl;
@@ -66,6 +69,7 @@ int main()
     //--------------------------------------
 
     //vertex shader
+    //creato e compilato
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
@@ -80,7 +84,8 @@ int main()
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-     // fragment shader
+    //fragment shader
+    //creato e compilato
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
@@ -122,7 +127,7 @@ int main()
     };
 
 
-        // secondo triangolo
+    // secondo triangolo
     float vertices2[] = {
          0.0f, -0.5f, 0.0f,  // sinistra
          0.7f, -0.5f, 0.0f,  // destra
@@ -131,24 +136,36 @@ int main()
 
     // VBO = Vertex Buffer Object
     // VAO = Vertex Array Object
-    // EBO = Element Buffer Object
+    
+    // vengono creati due VBO e due VAO, ognuno per un triangolo separato
+
     unsigned int VBO[2], VAO[2];
     glGenVertexArrays(2, VAO);
     glGenBuffers(2, VBO);
     // associare (binda) inizialmente l'oggetto Vertex Array (VBO), 
     // poi binda e imposta i buffer dei vertici e configura gli attributi dei vertici
     //(binda e aggiunge valore del VBO)
-    glBindVertexArray(VAO[0]);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO[0]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices1), vertices1, GL_STATIC_DRAW);
+    //Separare i VBO e VAO è utile quando si gestiscono più oggetti nel contesto di rendering. 
+    //avere due set separati permette di gestire facilmente più oggetti grafici (due triangoli) 
+    //senza dover sovrascrivere i dati di uno con quelli dell'altro.
+    //permette di gestire e disegnare oggetti grafici separati
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
+    //VBO[0] contiene i dati dei vertici per il primo triangolo
+    //VAO[0] è l'array associato a VBO[0]. OpenGL sa come leggere i dati da VBO[0] (posizioni 3D dei vertici)
+
+    glBindVertexArray(VAO[0]); // Binda VAO[0] come array corrente
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO[0]); // Binda il VBO[0] come buffer corrente
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices1), vertices1, GL_STATIC_DRAW); // Copia i dati in memoria GPU
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0); // Definisce l'attributo dei vertici
+    glEnableVertexAttribArray(0); // Abilita l'attributo del vertice
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
+    //lo stesso per il secondo triangolo, ma con VBO[1] e VAO[1]
     glBindVertexArray(VAO[1]);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO[1]);
@@ -172,7 +189,7 @@ int main()
     while (!glfwWindowShouldClose(window))
     {
         // input
-        
+
         processInput(window);
 
         // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
@@ -183,10 +200,10 @@ int main()
         //disegna il triangolo
         glUseProgram(shaderProgram);
 
-        glBindVertexArray(VAO[0]);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-        glBindVertexArray(VAO[1]);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glBindVertexArray(VAO[0]); //attiva il rispettivo VAO
+        glDrawArrays(GL_TRIANGLES, 0, 3); // Disegna il primo triangolo
+        glBindVertexArray(VAO[1]); // attiva il rispettivo VAO
+        glDrawArrays(GL_TRIANGLES, 0, 3); // Disegna il secondo triangolo
         //glDrawArrays(GL_TRIANGLES, 0, 6);
 
         // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
