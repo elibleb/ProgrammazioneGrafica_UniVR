@@ -22,6 +22,11 @@
 [1_5.8_1.cpp](1_5.8_1.cpp)
 <br><br>
 <img src="MEDIA/1_5.8_1.png" width="400" heigth="200">
+#### 5.8_2 Disegna due triangoli vicini utilizzando due VBO e VAO diversi
+[1_5.8_2.cpp](1_5.8_2.cpp)
+<br><br>
+<img src="MEDIA/1_5.8_2.png" width="400" heigth="200">
+
 
 
 
