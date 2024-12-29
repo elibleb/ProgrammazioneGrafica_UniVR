@@ -39,6 +39,10 @@
 [1_6.4.cpp](1_6.4.cpp)
 <br><br>
 <img src="MEDIA/1_6.4.gif" width="400" heigth="200">
+#### 6.5 Specifica tre colori come attributi ai vertici del triangolo e sfrutta l'interpolazione tra frammenti del fragment shader
+[1_6.5.cpp](1_6.5.cpp)
+<br><br>
+<img src="MEDIA/1_6.5.png" width="400" heigth="200">
 
 
 
