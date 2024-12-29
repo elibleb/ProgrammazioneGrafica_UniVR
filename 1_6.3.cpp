@@ -10,20 +10,30 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // shaders
+// vertexShader: prende la posizione di un vertice e restituisce
+// la posizione trasformata (gl_Position) e un colore rosso (vertexColor)
+// Calcola la posizione di ogni vertice e altre informazioni come il colore (in questo caso, vertexColor)
+// che vengono quindi passate al fragment shader tramite la variabile vertexColor
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
-"out vec4 vertexColor;\n"
+"out vec4 vertexColor;\n" //definisce una variabile di tipo vec4 che è un valore a 4 componenti (rosso, verde, blu, alfa)
+                          //che sarà passato al fragment shader
 "void main()\n"
 "{\n"
 "   gl_Position = vec4(aPos, 1.0);\n"
-"   vertexColor = vec4(0.5, 0.0, 0.0, 1.0);\n"
+"   vertexColor = vec4(0.5, 0.0, 0.0, 1.0);\n" // viene passato un valore al fragment shader
 "}\0";
+
+//fragment shader: Passa il colore del vertice al frammento e lo usa per colorare il pixel
+//riceve quindi i dati attraverso la variabile di tipo in (in vec4 vertexColor), utilizza questi dati (per colorare il pixel) 
+//nel calcolo finale del colore del frammento (FragColor)
 const char* fragmentShaderSource = "#version 330 core\n"
 "out vec4 FragColor;\n"
-"in vec4 vertexColor;\n"
+"in vec4 vertexColor;\n" // Questa è la variabile che riceve il valore dal vertex shader
 "void main()\n"
 "{\n"
-"   FragColor = vertexColor;\n"
+"   FragColor = vertexColor;\n" // Qui il valore passato dal vertex shader viene utilizzato, FragColor è la variabile di output
+                                // del fragment shader che determina il colore finale del pixel
 "}\n\0";
 
 int main()
@@ -50,11 +60,11 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window); // rendiamo il contesto della nostra finestra il contesto principale
-                                    // del thread corrente
+    // del thread corrente
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // chiamiamo questa funzione ad 
-                                                                //ogni ridimensionamento della finestra
+    //ogni ridimensionamento della finestra
 
-    // GLAD: carica tutti i puntatori alle funzioni OpenGL
+// GLAD: carica tutti i puntatori alle funzioni OpenGL
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -67,13 +77,13 @@ int main()
     //--------------------------------------
 
     //vertex shader
-
+    //Crea un vertex shader: carica il codice sorgente e lo compila
     unsigned int vertexShader;
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
 
-    //controllo eventuali errori relativi alla compilazione degli shader
+    //controllo eventuali errori relativi alla compilazione del vertex shader
     int success;
     char infoLog[512];
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
@@ -84,11 +94,12 @@ int main()
     }
 
     // fragment shader
+    // crea un fragment shader: carica il codice sorgente e lo compila
     unsigned int fragmentShader;
     fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
-    // controllo se ci sono errori nella compilazione degli shader
+    // controllo se ci sono errori nella compilazione del fragment shader
     glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
     if (!success)
     {
@@ -96,13 +107,14 @@ int main()
         std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
     // collegare gli shader (link)
-
+    //Crea un programma di shader, allega il vertex shader e il fragment shader e li collega insieme per formare
+    //un programma di rendering eseguibile
     unsigned int shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
-    // controllo errori relativi al collegamento
 
+    // controllo errori relativi al collegamento
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success) {
         glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
@@ -121,6 +133,8 @@ int main()
     };
 
     // VBO = vertex buffer object
+    // VAO = vertex array object
+
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -128,6 +142,7 @@ int main()
     // poi binda e imposta i buffer dei vertici e configura gli attributi dei vertici
     //(binda e aggiunge valore del VBO)
 
+    //Associa il VAO e il VBO, e copia i dati dei vertici nel VBO
     glBindVertexArray(VAO);
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -162,15 +177,17 @@ int main()
 
 
         // render
-        glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //funzione che setta lo stato
-        glClear(GL_COLOR_BUFFER_BIT); // funzione che usa lo stato
+        glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //imposta colore sfondo e pulisce lo schermo
+        glClear(GL_COLOR_BUFFER_BIT); 
 
         // disegna il triangolo
+        //usa il programma shader e disegna il triangolo
         glUseProgram(shaderProgram);
 
         glBindVertexArray(VAO); //avendo un solo VAO non è necessario bindarlo,  lo teniamo per una 
         //migliore organizzazione
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 3); //glDrawArrays: OpenGL si occupa automaticamente di passare i dati da vertexColor
+                                          //dal vertex shader al fragment shader per ogni frammento generato per il triangolo
 
 
         // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
