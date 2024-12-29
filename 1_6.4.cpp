@@ -9,20 +9,43 @@ void processInput(GLFWwindow* window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
-// shaders
+//Un uniform è una variabile che viene dichiarata nello shader e che può essere impostata dal programma prima 
+//che venga eseguito lo shader. Tipicamente viene utilizzato per passare valori che devono essere condivisi 
+//tra tutti i vertici o frammenti di una singola esecuzione di rendering (colori, trasformazioni, texture o
+//parametri di illuminazione)
+//Qui l'uniform viene usato per passare un colore dallo shader al fragment shader 
+//Questo permette di aggiornare dinamicamente il colore dell'oggetto renderizzato
+
+//gli uniform quindi forniscono un modo per inviare dati dallo shader program agli shaders senza dover inviare dati 
+//per ogni vertice o pixel individualmente
+
+
+//shaders
+//Vertex Shader è un programma che riceve le informazioni sui vertici e calcola la posizione dei vertici nello spazio 3D.
+//aPos è un attributo di vertice (posizione), che viene passato al gl_Position (la posizione finale del vertice nello spazio 2D).
 const char* vertexShaderSource = "#version 330 core\n"
 "layout (location = 0) in vec3 aPos;\n"
 "void main()\n"
 "{\n"
 "   gl_Position = vec4(aPos, 1.0);\n"
 "}\0";
+
+//Fragment Shader è un programma che calcola il colore di ogni pixel
+// Riceve un valore uniform chiamato ourColor e lo assegna al colore finale del pixel FragColor
 const char* fragmentShaderSource = "#version 330 core\n"
 "out vec4 FragColor;\n"
-"uniform vec4 ourColor;\n"
+"uniform vec4 ourColor;\n" //variabile che permette di passare un valore globale (un colore) dallo shader program
+
 "void main()\n"
 "{\n"
-"   FragColor = ourColor;\n"
+"   FragColor = ourColor;\n" //L'uniform ourColor non ha un valore definito all'interno dello shader, 
+                             //il suo valore sarà impostato dal codice C++ prima che lo shader venga eseguito
 "}\n\0";
+
+
+//Il programma disegna un triangolo su uno sfondo colorato, 
+//dove il colore verde del triangolo cambia dinamicamente nel tempo
+//grazie alla manipolazione del colore tramite un uniform nel fragment shader
 
 int main()
 {
@@ -48,11 +71,11 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window); // rendiamo il contesto della nostra finestra il contesto principale
-                                    // del thread corrente
+    // del thread corrente
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // chiamiamo questa funzione ad 
-                                                                //ogni ridimensionamento della finestra
+    //ogni ridimensionamento della finestra
 
-    // GLAD: carica tutti i puntatori alle funzioni OpenGL
+// GLAD: carica tutti i puntatori alle funzioni OpenGL
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -65,7 +88,7 @@ int main()
     //--------------------------------------
 
     //vertex shader
-
+    //crea un vertex shader, carica il codice sorgente e lo compila
     unsigned int vertexShader;
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -81,7 +104,8 @@ int main()
         std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-    // fragment shader
+    //fragment shader
+    //crea un fragment shader, carica il codice sorgente e lo compila
     unsigned int fragmentShader;
     fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
@@ -93,7 +117,9 @@ int main()
         glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
         std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
-    // collegare gli shader (link)
+
+    //collegare gli shader (link)
+    //collega i due shader (vertex e fragment) a un programma shader e lo compila
 
     unsigned int shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
@@ -119,12 +145,15 @@ int main()
     };
 
     // VBO = vertex buffer object
-    unsigned int VBO, VAO;
+    // VAO = vertex array object
+    unsigned int VBO, VAO; //Memorizzano rispettivamente i dati dei vertici e gli attributi dei vertici
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     // associare (binda) inizialmente l'oggetto Vertex Array (VBO), 
     // poi binda e imposta i buffer dei vertici e configura gli attributi dei vertici
     //(binda e aggiunge valore del VBO)
+    //Associa il VAO e il VBO, e copia i dati dei vertici nel VBO
+
 
     glBindVertexArray(VAO);
 
@@ -162,24 +191,33 @@ int main()
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f); //funzione che setta lo stato
         glClear(GL_COLOR_BUFFER_BIT); // funzione che usa lo stato
 
-        // disegna il triangolo
+
+        //attiva il programma shader per l'esecuzione
         glUseProgram(shaderProgram);
 
         //aggiorna l'uniform dello shader
-        double timeValue = glfwGetTime();
-        float greenValue = static_cast<float>(sin(timeValue) / 2.0 + 0.5);
+        //il valore dell'uniform viene passato allo shader prima di eseguire il rendering, utilizzando la funzione glUniform4f
+
+        double timeValue = glfwGetTime(); //Ottiene il tempo corrente tramite glfwGetTime()
+        float greenValue = static_cast<float>(sin(timeValue) / 2.0 + 0.5); //Calcola un valore verde oscillante
+                                                                    //nel tempo utilizzando una funzione seno (sin(timeValue))
+
+        //cerca la posizione dell'uniform chiamato ourColor nel programma shader attualmente in uso
+        //Passa questo valore come colore uniforme (ourColor) allo shader. Il colore del triangolo 
+        //sarà verde e cambierà dinamicamente con il tempo
         int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
-        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);//imposta il valore dell'uniform ourColor con un valore di
+                                                                       //colore vec4
 
 
         glBindVertexArray(VAO); //avendo un solo VAO non è necessario bindarlo,  lo teniamo per una 
         //migliore organizzazione
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 3); //disegna il triangolo utilizzando i vertici e gli shader configurati
 
 
         // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
-        glfwSwapBuffers(window);
-        glfwPollEvents();
+        glfwSwapBuffers(window); //scambia i buffer mostrando il disegno sullo schermo
+        glfwPollEvents(); //gestisce gli eventi
     }
 
     // de-alloco le risorse non più necessarie. 
