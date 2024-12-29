@@ -10,10 +10,10 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 //Un uniform è una variabile che viene dichiarata nello shader e che può essere impostata dal programma prima 
-//che venga eseguito lo shader. Tipicamente viene utilizzato per passare valori che devono essere condivisi 
+//che venga eseguito lo shader. Di solito viene usato per passare valori che devono essere condivisi 
 //tra tutti i vertici o frammenti di una singola esecuzione di rendering (colori, trasformazioni, texture o
 //parametri di illuminazione)
-//Qui l'uniform viene usato per passare un colore dallo shader al fragment shader 
+//In questo esercizio l'uniform viene usato per passare un colore dallo shader al fragment shader 
 //Questo permette di aggiornare dinamicamente il colore dell'oggetto renderizzato
 
 //gli uniform quindi forniscono un modo per inviare dati dallo shader program agli shaders senza dover inviare dati 
@@ -43,8 +43,7 @@ const char* fragmentShaderSource = "#version 330 core\n"
 "}\n\0";
 
 
-//Il programma disegna un triangolo su uno sfondo colorato, 
-//dove il colore verde del triangolo cambia dinamicamente nel tempo
+//Il colore verde del triangolo cambia dinamicamente nel tempo
 //grazie alla manipolazione del colore tramite un uniform nel fragment shader
 
 int main()
