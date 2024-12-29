@@ -38,9 +38,7 @@
 #### 6.4 Utilizzo degli uniforms per impostare attributi in grado di cambiare nel tempo e per scambiare dati tra l'applicazione e gli shaders
 [1_6.4.cpp](1_6.4.cpp)
 <br><br>
-<video width="400" height="200" controls>
-  <source src="MEDIA/1_6.4.mp4" type="video/mp4">
-</video>
+<img src="MEDIA/1_6.4.gif" width="400" heigth="200">
 
 
 
