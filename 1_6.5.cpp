@@ -9,23 +9,43 @@ void processInput(GLFWwindow* window);
 const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
+
 // shaders
+// Vengono usati due shader: uno per gestire le posizioni dei vertici e i colori e uno per il calcolo del colore del frammento
+
+// vertex shader
+//Il vertex shader riceve la posizione e il colore del vertice e li invia al fragment shader
 const char* vertexShaderSource = "#version 330 core\n"
-"layout (location = 0) in vec3 aPos;\n"
-"layout (location = 1) in vec3 aColor;\n"
-"out vec3 vertexColor;\n"
+"layout (location = 0) in vec3 aPos;\n" //Variabile aPos è la posizione del vertice
+"layout (location = 1) in vec3 aColor;\n" //aColor è il colore associato a ciascun vertice
+"out vec3 vertexColor;\n" //variabile vertexColor è utilizzata per passare il colore al fragment shader
 "void main()\n"
 "{\n"
 "   gl_Position = vec4(aPos, 1.0);\n"
 "   vertexColor = aColor;\n"
 "}\0";
+
+//fragment shader
+//riceve il colore dal vertex shader tramite la variabile vertexColor e lo assegna alla variabile
+//di output FragColor, che determina il colore del pixel finale
 const char* fragmentShaderSource = "#version 330 core\n"
 "out vec4 FragColor;\n"
 "in vec3 vertexColor;\n"
 "void main()\n"
 "{\n"
-"   FragColor = vec4(vertexColor, 1.0f);\n"
+"   FragColor = vec4(vertexColor, 1.0f);\n" //variabile di output che definisce il colore del frammento.
+                                            //vertexColor è utilizzato come colore finale insieme con l'aggiunta
+                                            //del valore 1.0f (opaco)
 "}\n\0";
+
+//L'interpolazione tra i frammenti è gestita automaticamente da OpenGL
+//Il vertex shader passa il colore associato a ciascun vertice al fragment shader tramite la variabile vertexColor
+//OpenGL poi calcola i colori per ogni frammento in base alla posizione del frammento all'interno del triangolo
+//e quindi applica un'interpolazione lineare tra i colori dei vertici
+
+//Se un frammento si trova tra il vertice rosso e quello verde avrà un colore che è una combinazione
+//tra rosso e verde, mentre un frammento che si trova tra il vertice verde e quello blu avrà un colore 
+//che è una combinazione tra verde e blu
 
 int main()
 {
@@ -51,11 +71,11 @@ int main()
         return -1;
     }
     glfwMakeContextCurrent(window); // rendiamo il contesto della nostra finestra il contesto principale
-                                    // del thread corrente
+    // del thread corrente
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); // chiamiamo questa funzione ad 
-                                                                //ogni ridimensionamento della finestra
+    //ogni ridimensionamento della finestra
 
-    // GLAD: carica tutti i puntatori alle funzioni OpenGL
+// GLAD: carica tutti i puntatori alle funzioni OpenGL
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
@@ -68,7 +88,7 @@ int main()
     //--------------------------------------
 
     //vertex shader
-
+    //creato e compilato vertex shader
     unsigned int vertexShader;
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -85,6 +105,7 @@ int main()
     }
 
     // fragment shader
+    // creato e compilato fragment shader
     unsigned int fragmentShader;
     fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
@@ -97,6 +118,8 @@ int main()
         std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
     // collegare gli shader (link)
+    //I due shader vengono collegati insieme in un programma shader (utilizzato successivamente per il rendering)
+    //Dopo il linking, gli shader originali vengono eliminati poiché non sono più necessari
 
     unsigned int shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
@@ -123,6 +146,7 @@ int main()
     };
 
     // VBO = vertex buffer object
+    // VAO = vertex array object
     unsigned int VBO, VAO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -171,11 +195,12 @@ int main()
         glClear(GL_COLOR_BUFFER_BIT); // funzione che usa lo stato
 
         // disegna il triangolo
+        //utilizza il program shader creato
         glUseProgram(shaderProgram);
 
-        glBindVertexArray(VAO); //avendo un solo VAO non è necessario bindarlo,  lo teniamo per una 
+        glBindVertexArray(VAO); //avendo un solo VAO non è necessario bindarlo, lo teniamo per una 
         //migliore organizzazione
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawArrays(GL_TRIANGLES, 0, 3); //disegna il triangolo con i vertici configurati precedentemente
 
 
         // GLFW: scambia i buffer e interroga gli eventi IO (tasti premuti, movimento del mouse etc.)
