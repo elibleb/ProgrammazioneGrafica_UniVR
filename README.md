@@ -44,7 +44,7 @@
 <br><br>
 <img src="MEDIA/1_6.5.png" width="400" heigth="200">
 #### 6.6 Uso della classe Shader e divisione in due file, uno di vertex shader e uno di fragment shader
-[1_6.6/1_6.6.cpp](1_6.6/1_6.6.cpp)
+[1_6.6/1_6.6.cpp](1_6.6.cpp)
 <br><br>
 <img src="MEDIA/1_6.6.gif" width="400" heigth="200">
 
