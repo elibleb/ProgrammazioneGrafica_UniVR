@@ -55,5 +55,9 @@
 [1_6.8_2.cpp](1_6.8_2/1_6.8_2.cpp)
 <br><br>
 <img src="MEDIA/1_6.8_2.png" width="400" heigth="200">
+#### 6.8_3 Utilizzo della posizione del vertice come parametro RGB per il colore
+[1_6.8_3.cpp](1_6.8_3/1_6.8_3.cpp)
+<br><br>
+<img src="MEDIA/1_6.8_3.png" width="400" heigth="200">
 
 
