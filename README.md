@@ -51,6 +51,9 @@
 [1_6.8_1.cpp](1_6.8_1/1_6.8_1.cpp)
 <br><br>
 <img src="MEDIA/1_6.8_1.png" width="400" heigth="200">
-
+#### 6.8_2 Uso di un offset passato come parametro uniform per spostare il triangolo a destra (dal vertex shader)
+[1_6.8_2.cpp](1_6.8_2/1_6.8_2.cpp)
+<br><br>
+<img src="MEDIA/1_6.8_2.png" width="400" heigth="200">
 
 
