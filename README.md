@@ -47,6 +47,10 @@
 [1_6.6.cpp](1_6.6/1_6.6.cpp)
 <br><br>
 <img src="MEDIA/1_6.6.png" width="400" heigth="200">
+#### 6.8_1 Modifica del vertex shader per rovesciare il triangolo
+[1_6.8_1.cpp](1_6.8_1/1_6.8_1.cpp)
+<br><br>
+<img src="MEDIA/1_6.8_1.png" width="400" heigth="200">
 
 
 
