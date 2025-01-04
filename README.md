@@ -64,5 +64,9 @@
 [1_7.0.cpp](1_7.0/1_7.0.cpp)
 <br><br>
 <img src="MEDIA/1_7.0.png" width="400" heigth="200">
+##### 7.6 Aggiunta della texture container.jpg al rettangolo
+[1_7.6.cpp](1_7.6/1_7.6.cpp)
+<br><br>
+<img src="MEDIA/1_7.6.png" width="400" heigth="200">
 
 
