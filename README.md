@@ -59,5 +59,10 @@
 [1_6.8_3.cpp](1_6.8_3/1_6.8_3.cpp)
 <br><br>
 <img src="MEDIA/1_6.8_3.png" width="400" heigth="200">
+### 7. Textures
+#### 7.0 Aggiunta della texture wall.jpg al triangolo
+[1_7.0.cpp](1_7.0/1_7.0.cpp)
+<br><br>
+<img src="MEDIA/1_7.0.png" width="400" heigth="200">
 
 
