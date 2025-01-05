@@ -68,5 +68,9 @@
 [1_7.6.cpp](1_7.6/1_7.6.cpp)
 <br><br>
 <img src="MEDIA/1_7.6.png" width="400" heigth="200">
+##### 7.6_1 Aggiunta della texture container.jpg al rettangolo ed interpola il colore con la posizione dei vertici 
+[1_7.6_1.cpp](1_7.6_1/1_7.6_1.cpp)
+<br><br>
+<img src="MEDIA/1_7.6_1.png" width="400" heigth="200">
 
 
