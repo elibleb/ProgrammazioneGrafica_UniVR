@@ -76,5 +76,9 @@
 [1_7.7.cpp](1_7.7/1_7.7.cpp)
 <br><br>
 <img src="MEDIA/1_7.7.png" width="400" heigth="200">
+#### 7.8_1 Inverte la texture awesomeface.png con mix di valore 80%/20%
+[1_7.8_1.cpp](1_7.8_1/1_7.8_1.cpp)
+<br><br>
+<img src="MEDIA/1_7.8_1.png" width="400" heigth="200">
 
 
