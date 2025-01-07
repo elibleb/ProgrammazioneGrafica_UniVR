@@ -118,17 +118,20 @@ int main()
     glBindTexture(GL_TEXTURE_2D, texture1); //associa la texture appena creata al target GL_TEXTURE_2D,
                             //tutte le successive operazioni GL_TEXTURE_2D da qui in poi avranno effetto su questo oggetto texture
     // imposta i parametri di wrapping della tessitura
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);// Imposta il comportamento della texture quando le coordinate
-        //S (orizzontali) eccedono i limiti. GL_REPEAT fa sì che la texture venga ripetuta
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE); // Imposta il comportamento della texture quando le coordinate
+        //S (orizzontali) eccedono i limiti. 
+        //GL_CLAMP_TO_EDGE: quando le coordinate di texture escono dai limiti della texture, 
+        //il valore del colore delle coordinate di texture sarà il colore dell'ultimo pixel valido sul bordo della texture.
+        //NON si ripete la texture oltre i suoi bordi, ma si estende l'ultimo pixel del bordo su tutta l'area eccedente.
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE); // stesso comportamento per le coordinate T(verticali)
 
     // imposta i parametri di filtraggio della tessitura
-    //Imposta il filtro di minificazione, ossia definisce come OpenGL deve gestire la texture quando viene visualizzata 
-    // con dimensioni più piccole. 
-    // GL_LINEAR_MIPMAP_LINEAR -> vengono utilizzate le mipmaps con interpolazione lineare
+    //Imposta il filtro di minificazione, imposta il filtro da usare quando la texture viene visualizzata in una dimensione 
+    //più piccola di quella originale 
+    // GL_NEAREST -> la texture non viene interpolata, verrà preso il colore del pixel più vicino alle coordinate di texture
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     //Imposta il filtro di ingrandimento per quando la texture viene visualizzata con dimensioni maggiori 
-    // GL_LINEAR -> filtro lineare
+    // GL_NEAREST -> la texture non viene interpolata, verrà preso il colore del pixel più vicino alle coordinate di texture
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     // carica l'immagine, crea la tessitura e genera le mipmaps
     int width, height, nrChannels;
