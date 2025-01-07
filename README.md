@@ -97,5 +97,10 @@
 [1_8.17.cpp](1_8.17/1_8.17.cpp)
 <br><br>
 <img src="MEDIA/1_8.17.png" width="400" heigth="200">
+#### 8.17_2 Traslare il rettangolo in basso a destra e ruotarlo nel tempo
+[1_8.17_2.cpp](1_8.17_2/1_8.17_2.cpp)
+<br><br>
+<img src="MEDIA/1_8.17_2.gif" width="400" heigth="200">
+
 
 
