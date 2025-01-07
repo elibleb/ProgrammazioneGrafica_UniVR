@@ -92,5 +92,10 @@
 [1_7.8_4.cpp](1_7.8_4/1_7.8_4.cpp)
 <br><br>
 <img src="MEDIA/1_7.8_4.gif" width="400" heigth="200">
+### 8. Transformations
+#### 8.17 Scala e ruota il rettangolo
+[1_8.17.cpp](1_8.17/1_8.17.cpp)
+<br><br>
+<img src="MEDIA/1_8.17.png" width="400" heigth="200">
 
 
