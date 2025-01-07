@@ -88,5 +88,9 @@
 [1_7.8_3.cpp](1_7.8_3/1_7.8_3.cpp)
 <br><br>
 <img src="MEDIA/1_7.8_3.png" width="400" heigth="200">
+#### 7.8_4 Aumenta/riduce la percentuale di mix delle due texture utilizzando le frecce da tastiera, UP per visualizzare awesomeface e DOWN per visualizzare container
+[1_7.8_4.cpp](1_7.8_4/1_7.8_4.cpp)
+<br><br>
+<img src="MEDIA/1_7.8_4.gif" width="400" heigth="200">
 
 
