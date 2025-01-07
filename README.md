@@ -80,9 +80,13 @@
 [1_7.8_1.cpp](1_7.8_1/1_7.8_1.cpp)
 <br><br>
 <img src="MEDIA/1_7.8_1.png" width="400" heigth="200">
-#### 7.8 Replica la texture awesomeface.png
+#### 7.8_2 Replica la texture awesomeface.png
 [1_7.8_2.cpp](1_7.8_2/1_7.8_2.cpp)
 <br><br>
 <img src="MEDIA/1_7.8_2.png" width="400" heigth="200">
+#### 7.8_3 Utilizzo della posizione centrale della texture come texture
+[1_7.8_3.cpp](1_7.8_3/1_7.8_3.cpp)
+<br><br>
+<img src="MEDIA/1_7.8_3.png" width="400" heigth="200">
 
 
