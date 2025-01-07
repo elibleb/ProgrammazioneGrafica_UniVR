@@ -124,7 +124,7 @@ int main()
 
     // imposta i parametri di filtraggio della tessitura
     //Imposta il filtro di minificazione, ossia definisce come OpenGL deve gestire la texture quando viene visualizzata con dimensioni più piccole. 
-    // GL_LINEAR_MIPMAP_LINEAR -> vengono utilizzate le mipmaps con interpolazione lineare
+    // GL_LINEAR -> filtro lineare
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     //Imposta il filtro di ingrandimento per quando la texture viene visualizzata con dimensioni maggiori 
     // GL_LINEAR -> filtro lineare
