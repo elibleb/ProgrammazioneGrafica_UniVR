@@ -126,3 +126,8 @@
 [1_9.8_2.cpp](1_9.8_2/1_9.8_2.cpp)
 <br><br>
 <img src="MEDIA/1_9.8_2.png" width="400" heigth="200">
+#### 9.9_3 Modifica "9.8.2" in modo tale da far ruotare un cubo ogni tre
+[1_9.8_3.cpp](1_9.8_3/1_9.8_3.cpp)
+<br><br>
+<img src="MEDIA/1_9.8_3.gif" width="400" heigth="200">
+
