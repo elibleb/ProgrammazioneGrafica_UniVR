@@ -114,6 +114,10 @@
 [1_9.7.cpp](1_9.7/1_9.7.cpp)
 <br><br>
 <img src="MEDIA/1_9.7.png" width="400" heigth="200">
+#### 9.8 Disegna un cubo che ruota senza abilitare le informazioni di profondità
+[1_9.8.cpp](1_9.8/1_9.8.cpp)
+<br><br>
+<img src="MEDIA/1_9.8.gif" width="400" heigth="200">
 
 
 
