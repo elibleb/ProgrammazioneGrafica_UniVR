@@ -175,7 +175,6 @@ int main()
     //stbi_load() dalla libreria stb_image per caricare l'immagine e ottenere i suoi dati 
     //(larghezza, altezza, numero di canali (3 per RGB ecc), numero di componenti che vogliamo ottenere, 
     // se 0 carica il formato più adatto)
-    stbi_set_flip_vertically_on_load(true);
     unsigned char* data = stbi_load("textures/container.jpg", &width, &height, &nrChannels, 0);
     if (data)
     {   //se i dati sono stati caricati con successo
