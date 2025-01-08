@@ -1,6 +1,6 @@
 ﻿#include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <glm/glm/glm.hpp>
+#include <glm/glm/glm.hpp> // GLM libreria per matematica 3D che fornisce strutture dati e funzioni per il calcolo di vettori, matrici, trasformazioni ecc
 #include <glm/glm/gtc/matrix_transform.hpp>
 #include <glm/glm/gtc/type_ptr.hpp>
 
