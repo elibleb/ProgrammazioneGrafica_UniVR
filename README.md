@@ -130,4 +130,8 @@
 [1_9.9_3.cpp](1_9.9_3/1_9.9_3.cpp)
 <br><br>
 <img src="MEDIA/1_9.9_3.gif" width="400" heigth="200">
-
+### 10. Camera
+#### 10.2 Rotazione nel tempo della camera attorno alla scena
+[1_10.2.cpp](1_10.2/1_10.2.cpp)
+<br><br>
+<img src="MEDIA/1_10.2.gif" width="400" heigth="200">
