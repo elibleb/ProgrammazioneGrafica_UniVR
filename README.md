@@ -125,4 +125,4 @@
 #### 9.8_2 Disegna più cubi in posizioni casuali con rotazione casuale
 [1_9.8_2.cpp](1_9.8_2/1_9.8_2.cpp)
 <br><br>
-<img src="MEDIA/1_9.8_2.gif" width="400" heigth="200">
+<img src="MEDIA/1_9.8_2.png" width="400" heigth="200">
