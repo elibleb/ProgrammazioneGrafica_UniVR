@@ -109,6 +109,12 @@
 [1_8.19_2.cpp](1_8.19_2/1_8.19_2.cpp)
 <br><br>
 <img src="MEDIA/1_8.19_2.gif" width="400" heigth="200">
+### 9. Coordinate Systems
+#### 9.7 Sposta le coordinate dei vertici attraverso le matrici model, view e projection. Si ottenerrà un oggetto inclinato all'indietro, un po' distante dall'osservatore e visualizzato con prospettiva
+[1_9.7.cpp](1_9.7/1_9.7.cpp)
+<br><br>
+<img src="MEDIA/1_9.7.png" width="400" heigth="200">
+
 
 
 
