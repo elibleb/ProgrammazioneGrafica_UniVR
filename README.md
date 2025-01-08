@@ -105,6 +105,10 @@
 [1_8.19_1.cpp](1_8.19_1/1_8.19_1.cpp)
 <br><br>
 <img src="MEDIA/1_8.19_1.gif" width="400" heigth="200">
+#### 8.19_2 Aggiungi a "8.17_2" un rettangolo in alto a sinistra e scalalo nel tempo
+[1_8.19_2.cpp](1_8.19_2/1_8.19_2.cpp)
+<br><br>
+<img src="MEDIA/1_8.19_2.gif" width="400" heigth="200">
 
 
 
