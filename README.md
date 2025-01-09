@@ -139,7 +139,7 @@
 [1_10.4.cpp](1_10.4/1_10.4.cpp)
 <br><br>
 <img src="MEDIA/1_10.4.gif" width="400" heigth="200">
-#### 10.8 Crea una camera che consente di muoversi liberamente in un ambiente 3D, movimento con WASD, scroll e posizione mouse
+#### 10.8 Crea una camera che consente di muoversi liberamente in un ambiente 3D (movimento con WASD tastiera, scroll e posizione mouse)
 [1_10.8.cpp](1_10.8/1_10.8.cpp)
 <br><br>
 <img src="MEDIA/1_10.8.gif" width="400" heigth="200">
