@@ -143,3 +143,7 @@
 [1_10.8.cpp](1_10.8/1_10.8.cpp)
 <br><br>
 <img src="MEDIA/1_10.8.gif" width="400" heigth="200">
+#### 10.9 Crea una camera che consente di muoversi liberamente in un ambiente 3D (movimento con WASD tastiera, scroll e posizione mouse) con una classe camera di tipo fly (camera.h)
+[1_10.9.cpp](1_10.9/1_10.9.cpp)
+<br><br>
+<img src="MEDIA/1_10.9.gif" width="400" heigth="200">
