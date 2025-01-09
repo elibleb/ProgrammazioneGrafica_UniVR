@@ -135,3 +135,7 @@
 [1_10.2.cpp](1_10.2/1_10.2.cpp)
 <br><br>
 <img src="MEDIA/1_10.2.gif" width="400" heigth="200">
+#### 10.4 Crea una camera che si muove alla stessa velocità su ogni sistema (deltaTime), movimento con WASD sulla tastiera
+[1_10.4.cpp](1_10.4/1_10.4.cpp)
+<br><br>
+<img src="MEDIA/1_10.4.gif" width="400" heigth="200">
