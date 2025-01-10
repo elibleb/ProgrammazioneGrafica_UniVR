@@ -147,3 +147,7 @@
 [1_10.9.cpp](1_10.9/1_10.9.cpp)
 <br><br>
 <img src="MEDIA/1_10.9.gif" width="400" heigth="200">
+#### 1o.9_1 Come 10.9 ma con camera di tipo FPS (mantiene l'osservatore a livello ground), usa camera_ground.h con ground level (xz plane)
+[1_10.9_1.cpp](1_10.9_1/1_10.9_1.cpp)
+<br><br>
+<img src="MEDIA/1_10.9_1.gif" width="400" heigth="200">
