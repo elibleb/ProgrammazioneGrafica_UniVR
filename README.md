@@ -147,11 +147,19 @@
 [1_10.9.cpp](1_10.9/1_10.9.cpp)
 <br><br>
 <img src="MEDIA/1_10.9.gif" width="400" heigth="200">
-#### 1o.9_1 Come 10.9 ma con camera di tipo FPS (mantiene l'osservatore a livello ground), usa camera_ground.h con ground level (xz plane)
+#### 10.9_1 Come 10.9 ma con camera di tipo FPS (mantiene l'osservatore a livello ground), usa camera_ground.h con ground level (xz plane)
 [1_10.9_1.cpp](1_10.9_1/1_10.9_1.cpp)
 <br><br>
 <img src="MEDIA/1_10.9_1.gif" width="400" heigth="200">
-#### 1o.9_2 Come negli ultimi esercizi ma viene creata la propria funzione calculate_lookAt_matrix (sempre movimento con WASD tastiera, scroll e posizione mouse)
+#### 10.9_2 Come negli ultimi esercizi ma viene creata la propria funzione calculate_lookAt_matrix (sempre movimento con WASD tastiera, scroll e posizione mouse)
 [1_10.9_2.cpp](1_10.9_2/1_10.9_2.cpp)
 <br><br>
 <img src="MEDIA/1_10.9.gif" width="400" heigth="200">
+## 2. Lighting
+### 12. Colors
+#### 12.1 Crea un oggetto cubo ed un oggetto luce (cubo più piccolo di quello principale)
+[2_12.1.cpp](2_12.1/2_12.1.cpp)
+<br><br>
+<img src="MEDIA/2_12.1.png" width="400" heigth="200">
+
+
