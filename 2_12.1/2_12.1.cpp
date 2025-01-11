@@ -180,7 +180,7 @@ int main()
 
 
         // render
-        glClearColor(0.0f, 0.3f, 0.9f, 1.0f); //imposto il colore dello sfondo
+        glClearColor(0.3f, 0.0f, 0.0f, 1.0f); //imposto il colore dello sfondo
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // resetta il buffer di profondità (depth), funzione che utilizza lo stato
 
         //attivo shader per colori
