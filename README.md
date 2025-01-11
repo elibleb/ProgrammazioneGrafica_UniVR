@@ -151,3 +151,7 @@
 [1_10.9_1.cpp](1_10.9_1/1_10.9_1.cpp)
 <br><br>
 <img src="MEDIA/1_10.9_1.gif" width="400" heigth="200">
+#### 1o.9_2 Come negli ultimi esercizi ma viene creata la propria funzione calculate_lookAt_matrix (sempre movimento con WASD tastiera, scroll e posizione mouse)
+[1_10.9_2.cpp](1_10.9_2/1_10.9_2.cpp)
+<br><br>
+<img src="MEDIA/1_10.9.gif" width="400" heigth="200">
