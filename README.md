@@ -166,5 +166,11 @@
 [2_13.4.cpp](2_13.4/2_13.4.cpp)
 <br><br>
 <img src="MEDIA/2_13.4.png" width="400" heigth="200">
+#### 13.6 Completa l'implementazione del sistema di illuminazione Phong nello spazio world, (usa camera_13.h per mia preferenza sensibilità mouse)
+[2_13.6.cpp](2_13.6/2_13.6.cpp)
+<br><br>
+<img src="MEDIA/2_13.6.png" width="400" heigth="200">
+
+
 
 
