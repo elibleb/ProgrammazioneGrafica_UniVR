@@ -152,7 +152,7 @@ int main()
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // VBO e VAO per il cubo che rappresenta la sorgente di luce
+    // VAO per il cubo che rappresenta la sorgente di luce, configurato per usare lo stesso VBO che contiene i vertici
     unsigned int lightCubeVAO;
     glGenVertexArrays(1, &lightCubeVAO); //genera un VAO per memorizzare lo stato degli attributi dei vertici
     glBindVertexArray(lightCubeVAO); //lega il VAO appena creato, tutte le operazioni successive eseguite su di esso
