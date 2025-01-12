@@ -161,5 +161,10 @@
 [2_12.1.cpp](2_12.1/2_12.1.cpp)
 <br><br>
 <img src="MEDIA/2_12.1.png" width="400" heigth="200">
+### 13. Basic Lighting
+#### 13.4 Uso dell'illuminazione diffusa. Intensità di illuminazione del cubo è maggiore se l'angolo tra il vettore normale e il vettore direzione della luce è piccolo
+[2_13.4.cpp](2_13.4/2_13.4.cpp)
+<br><br>
+<img src="MEDIA/2_13.4.png" width="400" heigth="200">
 
 
