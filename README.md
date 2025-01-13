@@ -174,6 +174,10 @@
 [2_13.7_1.cpp](2_13.7_1/2_13.7_1.cpp)
 <br><br>
 <img src="MEDIA/2_13.7_1.gif" width="400" heigth="200">
+#### 13.7_2 Implementa il Pong shading nello spazio view invece che world (camera_13.h per sensibilità mouse)
+[2_13.7_2.cpp](2_13.7_2/2_13.7_2.cpp)
+<br><br>
+<img src="MEDIA/2_13.7_2.gif" width="400" heigth="200">
 
 
 
