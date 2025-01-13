@@ -181,7 +181,7 @@
 #### 13.7_3 Utilizzo del Gouraud shading al posto del Phong (risulta meno preciso)
 [2_13.7_3.cpp](2_13.7_3/2_13.7_3.cpp)
 <br><br>
-<img src="MEDIA/2_13.7_3.gif" width="400" heigth="200">
+<img src="MEDIA/2_13.7_3.png" width="400" heigth="200">
 
 
 
