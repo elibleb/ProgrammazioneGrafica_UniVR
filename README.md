@@ -170,6 +170,10 @@
 [2_13.6.cpp](2_13.6/2_13.6.cpp)
 <br><br>
 <img src="MEDIA/2_13.6.png" width="400" heigth="200">
+#### 13.7_1 Usa seno e coseno per muovere la posizione della luce nel tempo
+[2_13.7_1.cpp](2_13.7_1/2_13.7_1.cpp)
+<br><br>
+<img src="MEDIA/2_13.7_1.gif" width="400" heigth="200">
 
 
 
