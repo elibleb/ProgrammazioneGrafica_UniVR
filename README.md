@@ -187,7 +187,10 @@
 [2_14.3.cpp](2_14.3/2_14.3.cpp)
 <br><br>
 <img src="MEDIA/2_14.3.gif" width="400" heigth="200">
-
+#### 14.4_1 Simula il materiale plastica ciano con intensità luminosa impostata al massimo
+[2_14.4_1.cpp](2_14.4_1/2_14.4_1.cpp)
+<br><br>
+<img src="MEDIA/2_14.4_1.png" width="400" heigth="200">
 
 
 
