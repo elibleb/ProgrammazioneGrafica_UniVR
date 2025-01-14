@@ -191,6 +191,11 @@
 [2_14.4_1.cpp](2_14.4_1/2_14.4_1.cpp)
 <br><br>
 <img src="MEDIA/2_14.4_1.png" width="400" heigth="200">
+### 15. Lighting Maps
+#### 15.1 Uso di una diffuse map
+[2_15.1.cpp](2_15.1/2_15.1.cpp)
+<br><br>
+<img src="MEDIA/2_15.1.png" width="400" heigth="200">
 
 
 
