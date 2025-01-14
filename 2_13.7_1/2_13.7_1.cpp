@@ -156,7 +156,7 @@ int main()
     // imposta gli attributi dei vertici
     // posizione
     // Il primo parametro è l'indice dell'attributo (0 posizione, 1 normale), lunghezza (3 per x, y, z),
-    // il tipo(GL_FLOAT), GL_FALSE non ci sono normalizzazione dei vettori e 6 * sizeof(float) perché ogni vertice ha 3 float
+    // il tipo(GL_FLOAT), GL_FALSE non ci sono normalizzazione dei vettori e 6 * sizeof(float) perché ogni vertice ha 6 float
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
     // normale
