@@ -199,7 +199,7 @@ int main()
                                         //calcolare l'illuminazione speculare, che dipende dall'angolo tra la vista (camera) e la luce 
 
 
-        //setta il colore delle varie luci
+        //setta il colore delle varie luci, luminosità impostata al massimo
         lightingS.setVec3("light.ambient", 1.0f, 1.0f, 1.0f);
         lightingS.setVec3("light.diffuse", 1.0f, 1.0f, 1.0f);
         lightingS.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
@@ -209,7 +209,7 @@ int main()
         //colore ambientale del materiale, illuminazione base che l'oggetto riflette in modo uniforme da tutte le direzioni
         lightingS.setVec3("material.ambient", 0.0f, 0.1f, 0.06f);
         //colore diffuso del materiale, riflessione diffusa della luce, dipende dall'angolo della luce rispetto alla superficie
-        lightingS.setVec3("material.diffuse", 0.0f, 0.50980392f, 0.50980392f);
+        lightingS.setVec3("material.diffuse", 0.0f, 0.50980392f, 0.50980392f); //ciano
         // colore speculare del materiale, quanto l'oggetto riflette la luce in modo speculare
         lightingS.setVec3("material.specular", 0.50196078f, 0.50196078f, 0.50196078f);
         lightingS.setFloat("material.shininess", 32.0f); //impsosta la lucentezza del materiale
