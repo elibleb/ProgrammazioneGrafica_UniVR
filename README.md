@@ -196,6 +196,10 @@
 [2_15.1.cpp](2_15.1/2_15.1.cpp)
 <br><br>
 <img src="MEDIA/2_15.1.png" width="400" heigth="200">
+#### 15.3 Calcola la luce speculare dalla texture fornita
+[2_15.3.cpp](2_15.3/2_15.3.cpp)
+<br><br>
+<img src="MEDIA/2_15.3.png" width="400" heigth="200">
 
 
 
