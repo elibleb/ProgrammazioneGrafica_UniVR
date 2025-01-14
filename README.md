@@ -182,6 +182,11 @@
 [2_13.7_3.cpp](2_13.7_3/2_13.7_3.cpp)
 <br><br>
 <img src="MEDIA/2_13.7_3.png" width="400" heigth="200">
+### 14. Materials
+#### 14.3 Effetto come quello raggiunto in precedenza ma con controllo completo sulla luce e sul materiale dell'oggetto
+[2_14.3.cpp](2_14.3/2_14.3.cpp)
+<br><br>
+<img src="MEDIA/2_14.3.gif" width="400" heigth="200">
 
 
 
