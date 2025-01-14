@@ -2,7 +2,7 @@
 
 out vec4 FragColor;
 
-//propriet‡ del materiale dell'oggetto 
+//propriet√† del materiale dell'oggetto 
 struct Material {
     vec3 ambient;
     vec3 diffuse;
@@ -10,7 +10,7 @@ struct Material {
     float shininess;
 }; 
 
-//propriet‡ della luce
+//propriet√† della luce
 struct Light {
     vec3 position;
     vec3 ambient;
@@ -37,15 +37,15 @@ void main()
     //dipende dall'angolo tra la normale alla superficie (Normal) e la direzione della luce (lightDir)
     vec3 norm = normalize(Normal);
     vec3 lightDir = normalize(light.position - FragPos);
-    float diff = max(dot(norm, lightDir), 0.0); //prodotto scalare, misura quanto la normale Ë allineata con la luce
+    float diff = max(dot(norm, lightDir), 0.0); //prodotto scalare, misura quanto la normale √® allineata con la luce
     vec3 diffuse = light.diffuse * (diff * material.diffuse);
     
     // luce speculare, simula i riflessi lucidi sulla superficie
     //Dipende dalla direzione della luce (lightDir), dalla normale e dalla posizione della camera (viewPos)
     vec3 viewDir = normalize(viewPos - FragPos);
     vec3 reflectDir = reflect(-lightDir, norm);//riflessione della direzione della luce rispetto alla normale
-    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-    vec3 specular = light.specular * (spec * material.specular);  //pow della lucentezza per simulare superfici + o - lucide
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);//pow della lucentezza per simulare superfici + o - lucide
+    vec3 specular = light.specular * (spec * material.specular);  
         
     vec3 result = ambient + diffuse + specular; //componenti luci sommate insieme
     FragColor = vec4(result, 1.0); //colore finale + componente opaca
