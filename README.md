@@ -212,5 +212,10 @@
 [2_15.4_3.cpp](2_15.4_3/2_15.4_3.cpp)
 <br><br>
 <img src="MEDIA/2_15.4_3.png" width="400" heigth="200">
+### 16. Light Casters
+#### 16.1 Creazione di una luce direzionale
+[2_16.1.cpp](2_16.1/2_16.1.cpp)
+<br><br>
+<img src="MEDIA/2_16.1.png" width="400" heigth="200">
 
 
