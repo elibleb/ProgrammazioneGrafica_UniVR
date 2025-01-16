@@ -200,6 +200,10 @@
 [2_15.3.cpp](2_15.3/2_15.3.cpp)
 <br><br>
 <img src="MEDIA/2_15.3.png" width="400" heigth="200">
+#### 15.4_1 Inverte la luce speculare calcolata dalla texture
+[2_15.4_1.cpp](2_15.4_1/2_15.4_1.cpp)
+<br><br>
+<img src="MEDIA/2_15.4_1.png" width="400" heigth="200">
 
 
 
