@@ -208,5 +208,9 @@
 [2_15.4_2.cpp](2_15.4_2/2_15.4_2.cpp)
 <br><br>
 <img src="MEDIA/2_15.4_2.png" width="400" heigth="200">
+#### 15.4_3 Aggiunta di una luce emissiva data da una texture (rappresentata dalle scritte verdi)
+[2_15.4_3.cpp](2_15.4_3/2_15.4_3.cpp)
+<br><br>
+<img src="MEDIA/2_15.4_3.png" width="400" heigth="200">
 
 
