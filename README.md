@@ -204,6 +204,9 @@
 [2_15.4_1.cpp](2_15.4_1/2_15.4_1.cpp)
 <br><br>
 <img src="MEDIA/2_15.4_1.png" width="400" heigth="200">
-
+#### 15.4_2 Utilizza una texture colorata per calcolare la luce speculare
+[2_15.4_2.cpp](2_15.4_2/2_15.4_2.cpp)
+<br><br>
+<img src="MEDIA/2_15.4_2.png" width="400" heigth="200">
 
 
