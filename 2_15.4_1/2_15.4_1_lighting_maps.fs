@@ -2,14 +2,14 @@
 
 out vec4 FragColor;
 
-//propriet� del materiale dell'oggetto
+//proprietà del materiale dell'oggetto
 struct Material {
     sampler2D diffuse;
     sampler2D specular;
     float shininess;
 }; 
 
-//propriet� della luce
+//proprietà della luce
 struct Light {
     vec3 position;
     vec3 ambient;
@@ -44,7 +44,9 @@ void main()
     vec3 viewDir = normalize(viewPos - FragPos);
     vec3 reflectDir = reflect(-lightDir, norm); //riflessione della direzione della luce rispetto alla normale
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess); //pow della lucentezza per simulare superfici + o - lucide
-    vec3 specular = light.specular * spec * (vec3(1.0) - vec3(texture(material.specular, TexCoords)));  
+    vec3 specular = light.specular * spec * (vec3(1.0) - vec3(texture(material.specular, TexCoords))); //si stanno usando le
+    //coordinate della texture. Si modifica la riflessione speculare in modo che dove la texture è chiara (specularità alta) si ha
+    //riflessione meno intensa
     
     FragColor = vec4(ambient + diffuse + specular, 1.0);
 }
