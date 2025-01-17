@@ -217,5 +217,9 @@
 [2_16.1.cpp](2_16.1/2_16.1.cpp)
 <br><br>
 <img src="MEDIA/2_16.1.png" width="400" heigth="200">
+#### 16.3_2  Creazione di una luce point con attenuazione
+[2_16.3_2.cpp](2_16.3_2/2_16.3_2.cpp)
+<br><br>
+<img src="MEDIA/2_16.3_2.png" width="400" heigth="200">
 
 
