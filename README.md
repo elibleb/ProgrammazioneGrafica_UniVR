@@ -225,5 +225,9 @@
 [2_16.5.cpp](2_16.5/2_16.5.cpp)
 <br><br>
 <img src="MEDIA/2_16.5.png" width="400" heigth="200">
+#### 16.6  Creazione di una flashlight con attenuazione dei bordi
+[2_16.6.cpp](2_16.6/2_16.6.cpp)
+<br><br>
+<img src="MEDIA/2_16.6.png" width="400" heigth="200">
 
 
