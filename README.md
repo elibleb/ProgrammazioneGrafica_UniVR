@@ -221,5 +221,9 @@
 [2_16.3_2.cpp](2_16.3_2/2_16.3_2.cpp)
 <br><br>
 <img src="MEDIA/2_16.3_2.png" width="400" heigth="200">
+#### 16.5  Creazione di una flashlight posizionata sulla camera
+[2_16.5.cpp](2_16.5/2_16.5.cpp)
+<br><br>
+<img src="MEDIA/2_16.5.png" width="400" heigth="200">
 
 
