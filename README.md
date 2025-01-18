@@ -236,8 +236,8 @@
 <img src="MEDIA/2_17.3.png" width="400" heigth="200">
 ### 21. Stencil testing
 #### 21.3 Importa un modello (formato .obj) completo di texture attraverso Assimp, uso di classi Mesh e Model dedicate
-[2_21.3.cpp](2_21.3/2_21.3.cpp)
+[3_21.3.cpp](3_21.3/3_21.3.cpp)
 <br><br>
-<img src="MEDIA/2_21.3.png" width="400" heigth="200">
+<img src="MEDIA/3_21.3.png" width="400" heigth="200">
 
 
