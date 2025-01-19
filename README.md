@@ -240,5 +240,11 @@
 [3_21.3.cpp](3_21.3/3_21.3.cpp)
 <br><br>
 <img src="MEDIA/3_21.3.png" width="400" heigth="200">
+## 5. Advanced Lighting
+### 37. Normal Mapping
+#### 37.2_2 Utilizza normal mapping per creare dettagli a basso costo attraverso la modifica di vettori delle normali per frammento senza dover modificare l'equazione dell'illuminazione
+[5_37.2_2.cpp](5_37.2_2/5_37.2_2.cpp)
+<br><br>
+<img src="MEDIA/5_37.2_2.png" width="400" heigth="200">
 
 
