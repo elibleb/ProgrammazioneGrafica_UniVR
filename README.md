@@ -246,5 +246,19 @@
 [5_37.2_2.cpp](5_37.2_2/5_37.2_2.cpp)
 <br><br>
 <img src="MEDIA/5_37.2_2.png" width="400" heigth="200">
+## 6. Esercitazione: caricamento modello animato con Assimp
+## 7. Esercitazione aggiuntiva 1
+[esercitazione1.cpp][esercitazione1/esercitazione1.cpp]
+<br><br>
+In questa esercitazione viene istanziato il modello statico "backpack.obj” che è già stato utilizzato nel capitolo dedicato al caricamento dei modelli (vedere Model Loading, es. 3_21.3). A questo modello statico viene applicata l'illuminazione che è composta da:
+- 1 luce direzionale
+- 4 point light di cui una ruota attorno al modello
+- 1 spot light posizionata sulla camera
+Le point light sono implementate come cubi.
+L'illuminazione viene gestita attraverso la definizione delle strutture dati necessarie che vengono poi inviate al relativo shader.
+Il calcolo dell'illuminazione (lighting) avviene nel tangent space.
+Vengono implementate anche le classiche funzioni di gestione dell'input utente utilizzate negli esercizi precedenti, nello specifico, il movimento della camera tramite i tasti WASD, il controllo della direzione attraverso il movimento del mouse e lo zoom tramite lo scroll dello stesso (rotellina).
+<br><br>
+<img src="MEDIA/esercitazione1.gif" width="400" heigth="200">
 
 
