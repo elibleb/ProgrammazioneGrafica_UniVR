@@ -248,7 +248,7 @@
 <img src="MEDIA/5_37.2_2.png" width="400" heigth="200">
 ## 6. Esercitazione: caricamento modello animato con Assimp
 ## 7. Esercitazione aggiuntiva 1
-[esercitazione1.cpp][esercitazione1/esercitazione1.cpp]
+[esercitazione1.cpp](esercitazione1/esercitazione1.cpp)
 <br><br>
 In questa esercitazione viene istanziato il modello statico "backpack.obj” che è già stato utilizzato nel capitolo dedicato al caricamento dei modelli (vedere Model Loading, es. 3_21.3). A questo modello statico viene applicata l'illuminazione che è composta da:
 - 1 luce direzionale
