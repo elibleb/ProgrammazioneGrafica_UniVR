@@ -256,8 +256,11 @@ In questa esercitazione viene istanziato il modello statico "backpack.obj” che
 - 1 spot light posizionata sulla camera
 
 Le point light sono implementate come cubi.
+
 L'illuminazione viene gestita attraverso la definizione delle strutture dati necessarie che vengono poi inviate al relativo shader.
+
 Il calcolo dell'illuminazione (lighting) avviene nel tangent space.
+
 Vengono implementate anche le classiche funzioni di gestione dell'input utente utilizzate negli esercizi precedenti, nello specifico, il movimento della camera tramite i tasti WASD, il controllo della direzione attraverso il movimento del mouse e lo zoom tramite lo scroll dello stesso (rotellina).
 <br><br>
 <img src="MEDIA/esercitazione1.gif" width="400" heigth="200">
