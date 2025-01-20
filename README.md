@@ -254,6 +254,7 @@ In questa esercitazione viene istanziato il modello statico "backpack.obj” che
 - 1 luce direzionale
 - 4 point light di cui una ruota attorno al modello
 - 1 spot light posizionata sulla camera
+
 Le point light sono implementate come cubi.
 L'illuminazione viene gestita attraverso la definizione delle strutture dati necessarie che vengono poi inviate al relativo shader.
 Il calcolo dell'illuminazione (lighting) avviene nel tangent space.
