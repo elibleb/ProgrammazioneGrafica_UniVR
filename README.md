@@ -262,8 +262,11 @@ Vengono implementate anche le classiche funzioni di gestione dell'input utente u
 <br><br>
 <img src="MEDIA/esercitazione1.gif" width="400" heigth="200">
 ## 8. Esercitazione aggiuntiva 2
-[esercitazione2.cpp](esercitazione2/esercitazione2.cpp)
-[esercitazione2_soft.cpp](esercitazione1/esercitazione2_soft.cpp)
+[esercitazione2.cpp](esercitazione2/esercitazione2.cpp) <br>
+[esercitazione2_soft.cpp](esercitazione2/esercitazione2_soft.cpp)
+<br><br>
+<img src="MEDIA/esercitazione2.gif" width="400" heigth="200">
+<img src="MEDIA/esercitazione_2soft.gif" width="400" heigth="200">
 
 
 
