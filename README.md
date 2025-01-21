@@ -261,5 +261,9 @@ Il calcolo dell'illuminazione (lighting) avviene nel tangent space.<br>
 Vengono implementate anche le classiche funzioni di gestione dell'input utente utilizzate negli esercizi precedenti, nello specifico, il movimento della camera tramite i tasti WASD, il controllo della direzione attraverso il movimento del mouse e lo zoom tramite lo scroll dello stesso (rotellina).
 <br><br>
 <img src="MEDIA/esercitazione1.gif" width="400" heigth="200">
+## 8. Esercitazione aggiuntiva 2
+[esercitazione2.cpp](esercitazione2/esercitazione2.cpp)
+[esercitazione2_soft.cpp](esercitazione1/esercitazione2_soft.cpp)
+
 
 
