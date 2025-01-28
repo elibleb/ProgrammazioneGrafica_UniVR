@@ -159,7 +159,7 @@ int main()
     // esegue il bind per associare la memoria
     glBindBuffer(GL_ARRAY_BUFFER, VBO); // Associa il VBO al buffer di tipo ARRAY_BUFFER
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW); // glBufferData per riempire il buffer
-    //con i dati dei vertici tramite 
+    //con i dati dei vertici
 
     // posizione
     glBindVertexArray(modelVAO); //Associa il VAO appena creato
@@ -262,9 +262,9 @@ int main()
         lightingShader.setFloat("spotLight.constant", 1.0f);
         lightingShader.setFloat("spotLight.linear", 0.09);
         lightingShader.setFloat("spotLight.quadratic", 0.032);
-        //angolo del fascio di luce, indicando dove la luce è concentrata e quando inizia a sfumare.
+        //angolo del fascio di luce, indicano dove la luce è concentrata e quando inizia a sfumare.
         lightingShader.setFloat("spotLight.cutOff", glm::cos(glm::radians(8.0f))); //oltre a questo angolo la luce sarà visibile
-        lightingShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(9.0f))); //oltre a questo ancgolo la luce smetterà di essere visibile e 
+        lightingShader.setFloat("spotLight.outerCutOff", glm::cos(glm::radians(9.0f))); //oltre a questo angolo la luce smetterà di essere visibile e 
                                                                                         //gradualmente inizierà a sfumare
 
 
@@ -288,7 +288,7 @@ int main()
         model = glm::translate(model, glm::vec3(0.0f, 0.0f, 0.0f));
         // lo scale riduce la dimensione del modello
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
-        // ruota il modello nel tempo
+        
         lightingShader.setMat4("model", model);
         ourModel.Draw(modelShader); //disegna il modello
 
