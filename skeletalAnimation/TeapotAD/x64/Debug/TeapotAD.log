@@ -1,0 +1,14 @@
+﻿  AnimationScene.cpp
+  QuatCamera.cpp
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\QuatCamera.cpp(233,32): warning C4305: 'argomento': troncamento da 'double' a 'const T'
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\QuatCamera.cpp(233,32): warning C4305:         with
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\QuatCamera.cpp(233,32): warning C4305:         [
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\QuatCamera.cpp(233,32): warning C4305:             T=float
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\QuatCamera.cpp(233,32): warning C4305:         ]
+  TeapotAD.cpp
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\TeapotAD.cpp(126,24): warning C4244: 'inizializzazione': conversione da 'double' a '__int64'. Possibile perdita di dati.
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\TeapotAD.cpp(132,19): warning C4244: 'inizializzazione': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\TeapotAD.cpp(136,30): warning C4244: 'argomento': conversione da 'double' a 'float'. Possibile perdita di dati.
+C:\Users\gambarettop\Downloads\SkeletonAnimation\TeapotAD\TeapotAD.cpp(143,17): warning C4244: '=': conversione da 'double' a '__int64'. Possibile perdita di dati.
+  Generazione del codice in corso...
+  TeapotAD.vcxproj -> C:\Users\gambarettop\Downloads\SkeletonAnimation\x64\Debug\SkeletalAnimationDemo.exe
