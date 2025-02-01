@@ -275,7 +275,7 @@ Per il rendering dei valori di profondità in una cubemap sono necessari tre sha
 <br><br>
 [esercitazione2_soft.cpp](esercitazione2/esercitazione2_soft.cpp)
 <br><br>
-Dopo aver applicato la tecnica si nota che le ombre risultano un po' frastagliate. Si è trovata una soluzione implementando il "Percentage-Close Filtering" (PCF), una tecnica che rende le ombre più morbide. Questo si ottiene calcolando il valore dell'ombra come la media tra quella attuale e quelle adiacenti.
+Dopo aver applicato la tecnica si nota che le ombre risultano troppo nette, quindi non molto realistiche. Si è trovata una soluzione implementando il "Percentage-Close Filtering" (PCF), una tecnica che rende le ombre più morbide. Questo si ottiene calcolando il valore dell'ombra come la media tra quella attuale e quelle adiacenti. In questo modo, le ombre risultano più simili alla realtà.
 <br><br>
 <img src="MEDIA/esercitazione_2soft.gif" width="400" heigth="200">
 
