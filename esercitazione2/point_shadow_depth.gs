@@ -3,12 +3,12 @@
 //Geometry Shader utilizzato per manipolare o generare nuove primitive, come vertici o triangoli, a partire da un input
 
 layout (triangles) in; //input: triangoli (triangles), ogni gruppo di 3 vertici rappresenta un triangolo
-//ogni invocazione del gs ricever‡ un triangolo 
+//ogni invocazione del gs ricever√† un triangolo 
 
-//output Ë una sequenza di vertici, massimo 18, per formare sei triangoli, tipo di primitiva in uscita "triangle_strip"
+//output √® una sequenza di vertici, massimo 18, per formare sei triangoli, tipo di primitiva in uscita "triangle_strip"
 layout (triangle_strip, max_vertices=18) out;
 
-uniform mat4 shadowMatrices[6]; //contiene le 6 matrici, ognuna Ë una combinazione di matrice di vista e matrice di proiezione per una 
+uniform mat4 shadowMatrices[6]; //contiene le 6 matrici, ognuna √® una combinazione di matrice di vista e matrice di proiezione per una 
                                 //delle 6 facce di una cube map, per ciascuna direzione della cube map
 
 out vec4 FragPos; // output per EmitVertex
@@ -33,4 +33,4 @@ void main()
         EndPrimitive();
     }
 } 
-//output: genera un triangolo per ogni faccia della cube map pronto per essere rasterizzato
+//output: genera un triangolo per ogni faccia della cube map
