@@ -13,7 +13,7 @@ in VS_OUT {
 } fs_in;
 
 struct Material {
-    sampler2D diffuse; // componente diffusiva
+    sampler2D diffuse; // componente diffuse
     sampler2D specular; // componente speculare
     sampler2D normal;
     float shininess; // shininess del materiale
@@ -84,7 +84,7 @@ void main()
     // trasforma il vettore della normale nell'intorno [-1, 1] nello spazio tangente
     normal = normalize(normal * 2.0 - 1.0);
     
-    //normale passata dal vs (fs_in.Normal), che Ë gi‡ nello spazio mondo
+    //normale passata dal vs (fs_in.Normal), che √® gi√† nello spazio mondo
     vec3 norm = normalize(fs_in.Normal);
  
     vec3 tanViewDir = normalize(fs_in.TangentViewPos - fs_in.TangentFragPos); //Direzione della vista trasformata nel tangent space
@@ -108,15 +108,15 @@ void main()
 // calcolo del colore sulla Directional Light
 vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir)
 {
-    // negativa poichÈ va dal frammento verso la sorgente di luce
+    // negativa poich√© va dal frammento verso la sorgente di luce
     vec3 lightDir = normalize(-light.direction); 
     // Diffuse shading 
     float diff = max(dot(normal, lightDir), 0.0);//prodotto scalare tra la normale del frammento e la direzione della luce
-                                                 //determina quanto il frammento Ë esposto alla luce direzionale
+                                                 //determina quanto il frammento √® esposto alla luce direzionale
     // Specular shading
     vec3 reflectDir = reflect(-lightDir, normal); //direzione in cui la luce si riflette rispetto alla normale
 
-    //ottiene coseno dell'angolo tra viewDir e reflectDir, determina quanto riflessiva Ë la superficie
+    //ottiene coseno dell'angolo tra viewDir e reflectDir, determina quanto riflessiva √® la superficie
     //eleva il valore del coseno a una potenza che dipende dalla lucentezza (shininess) del materiale
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
 
@@ -140,11 +140,11 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
     //direzione del riflesso della luce sulla superficie
     vec3 reflectDir = reflect(-lightDir, normal); //vettore negativo (-lightDir per ottenere il raggio riflesso rispetto alla normale
     //luce speculare
-    //eleva il coseno alla shininess, aumenta concentrazione riflesso per superfici pi˘ lucide
+    //eleva il coseno alla shininess, aumenta concentrazione riflesso per superfici pi√π lucide
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
     // distanza dalla sorgente di luce
     float distance = length((fs_in.TBN * light.position) - fragPos); //Trasforma la posizione della luce nel tangent space
-    // formula per l'attenuazione, modella l'intensit‡ della luce in base alla distanza
+    // formula per l'attenuazione, modella l'intensit√† della luce in base alla distanza
     float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
     // combina i risultati
     vec3 ambient = light.ambient * vec3(texture(material.diffuse, fs_in.TexCoords));
@@ -172,16 +172,16 @@ vec3 CalcSpotLight(SpotLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
     float distance = length(light.position - fragPos);
     // formula per l'attenuazione
     float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
-    // thetaper per determinare quanto il frammento si trova all'interno del cono di luce
+    // theta per per determinare quanto il frammento si trova all'interno del cono di luce
     float theta = dot(lightDir, normalize(-light.direction));  //Usa un angolo interno (cutOff) e uno esterno (outerCutOff) 
                                                                //per modellare un cono di luce con bordi morbidi
     float epsilon = light.cutOff - light.outerCutOff;
-    float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0); //intensit‡ cambia se fuori o dentro il cono
+    float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0); //intensit√† cambia se fuori o dentro il cono
     // combina i risultati
     vec3 ambient = light.ambient * vec3(texture(material.diffuse, fs_in.TexCoords));
     vec3 diffuse = light.diffuse * diff * vec3(texture(material.diffuse, fs_in.TexCoords));
     vec3 specular = light.specular * spec * vec3(texture(material.specular, fs_in.TexCoords));
-    // moltiplica le componenti per attenuazione ed intensit‡
+    // moltiplica le componenti per attenuazione ed intensit√†
     ambient *= attenuation * intensity;
     diffuse *= attenuation * intensity;
     specular *= attenuation * intensity;
