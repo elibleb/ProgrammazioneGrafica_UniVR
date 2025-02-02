@@ -5,11 +5,14 @@
 
 #include <cstdio>
 
+//codice utilizzato per il debug, funzioni utili per rilevare e stampare gli errori e per ottenere informazioni sull'installazione
+//di OpenGl e le relative estensioni
+
 GLUtils::GLUtils() {}
 
 int GLUtils::checkForOpenGLError(const char * file, int line) {
     //
-    // ritorna 1 se si è verificato un errore OpenGL, 0 altrimenti.
+    // ritorna 1 se si Ã¨ verificato un errore OpenGL, 0 altrimenti.
     //
     GLenum glErr;
     int    retCode = 0;
