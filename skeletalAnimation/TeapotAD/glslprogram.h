@@ -31,6 +31,9 @@ using glm::mat3;
 
 #include <stdexcept>
 
+//gestione programmi GLSL. Permette di caricare shader, compilare e collegare programmi, configurare varibili uniform, gestire attributi
+//e uniform e fare devug delle risorse shader
+
 class GLSLProgramException : public std::runtime_error {
   public:
     GLSLProgramException( const string & msg ) :
