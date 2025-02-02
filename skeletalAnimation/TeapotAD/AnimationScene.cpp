@@ -15,6 +15,10 @@ using glm::vec3;
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform2.hpp>
 
+//definisce la scena dell'applicazione grafica, dove viene animato un modello scheletrico. Il modello viene caricato da un file
+// e viene animato attraverso un sistema di ossa. L'illuminazione e le trasformazioni vengono gestite tramite shader.
+//La scena viene continuamente aggiornata e renderizzata per simulare l'animazione in tempo reale.
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 // Costruttore di default
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -92,7 +96,7 @@ void AnimationScene::render(QuatCamera camera)
 
 	setMatrices(camera);
 
-	 //Imposta le proprietà del materiale del Teapot nello shader e renderizza
+	 //Imposta le proprietÃ  del materiale del Teapot nello shader e renderizza
 	//prog->setUniform("Ka", vec3(0.225f, 0.125f, 0.0f));
 	prog->setUniform("Ka", vec3(0.225f, 0.125f, 0.0f));
 	prog->setUniform("Kd", vec3(1.0f, 0.6f, 0.0f));
@@ -113,7 +117,7 @@ void AnimationScene::setMatrices(QuatCamera camera)
 
     prog->setUniform("MVP", camera.projection() * mv);
 
-	// La matrice corretta per trasformare la normale è la trasposta dell'inverso della matrice M
+	// La matrice corretta per trasformare la normale Ã¨ la trasposta dell'inverso della matrice M
 	mat3 normMat = glm::transpose(glm::inverse(mat3(model)));
 
 	prog->setUniform("M", model);
