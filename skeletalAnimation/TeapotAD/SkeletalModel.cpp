@@ -1,5 +1,9 @@
 #include "SkeletalModel.h"
 
+//si occupa di gestire l'importazione, la trasformazione e il rendering di modelli 3D scheletrici animati. Usa Assimp per caricare
+//i modelli, gestisce la struttura che tiene traccia delle ossa e delle animazioni, interpolando le trasformazioni tra i keyframe
+//di animazione per ogni osso e applicando queste trasformazioni durante il rendering.
+
 
 SkeletalModel::SkeletalModel(GLSLProgram* shaderProgIn)
 {
@@ -184,7 +188,7 @@ void SkeletalModel::LoadBones(unsigned int MeshIndex, const aiMesh* pMesh, std::
 		unsigned int BoneIndex = 0;
 		// Ottieni il nome dell'osso
 		std::string BoneName(pMesh->mBones[i]->mName.data);
-		// Se l'osso non è già nella mappa
+		// Se l'osso non Ã¨ giÃ  nella mappa
 		if (m_BoneMapping.find(BoneName) == m_BoneMapping.end()) {
 			// Imposta l'ID dell'osso come l'attuale numero totale di ossa
 			BoneIndex = m_NumBones;
@@ -195,7 +199,7 @@ void SkeletalModel::LoadBones(unsigned int MeshIndex, const aiMesh* pMesh, std::
 			m_BoneInfo.push_back(bi);
 		}
 		else {
-			// L'ID dell'osso è già nella mappa 
+			// L'ID dell'osso Ã¨ giÃ  nella mappa 
 			BoneIndex = m_BoneMapping[BoneName];
 		}
 		m_BoneMapping[BoneName] = BoneIndex;
@@ -207,7 +211,7 @@ void SkeletalModel::LoadBones(unsigned int MeshIndex, const aiMesh* pMesh, std::
 			unsigned int VertexID = m_Entries[MeshIndex].BaseVertex + pMesh->mBones[i]->mWeights[j].mVertexId;
 			// Il valore di quanto quest'osso influenza il vertice 
 			float Weight = pMesh->mBones[i]->mWeights[j].mWeight;
-			// Inserisci i dati dell'osso per un particolare ID di vertice. Un massimo di 4 ossa può influenzare lo stesso vertice 
+			// Inserisci i dati dell'osso per un particolare ID di vertice. Un massimo di 4 ossa puÃ² influenzare lo stesso vertice 
 			Bones[VertexID].AddBoneData(BoneIndex, Weight);
 		}
 	}
@@ -296,7 +300,7 @@ void SkeletalModel::CalcInterpolatedRotation(aiQuaternion& Out, float AnimationT
 	unsigned int NextRotationIndex = (RotationIndex + 1);
 	assert(NextRotationIndex < pNodeAnim->mNumRotationKeys);
 
-	// Calcola il delta di tempo, cioè il tempo tra le due keyframe.
+	// Calcola il delta di tempo, cioÃ¨ il tempo tra le due keyframe.
 	float DeltaTime = pNodeAnim->mRotationKeys[NextRotationIndex].mTime - pNodeAnim->mRotationKeys[RotationIndex].mTime;
 
 	// Calcola il tempo trascorso all'interno del delta di tempo.  
@@ -329,7 +333,7 @@ void SkeletalModel::CalcInterpolatedScaling(aiVector3D& Out, float AnimationTime
 	unsigned int NextScalingIndex = (ScalingIndex + 1);
 	assert(NextScalingIndex < pNodeAnim->mNumScalingKeys);
 	
-	// Calcola il delta di tempo, cioè il tempo tra le due keyframe.
+	// Calcola il delta di tempo, cioÃ¨ il tempo tra le due keyframe.
 	float DeltaTime = pNodeAnim->mScalingKeys[NextScalingIndex].mTime - pNodeAnim->mScalingKeys[ScalingIndex].mTime;
 	
 	// Calcola il fattore di interpolazione.
@@ -359,7 +363,7 @@ void SkeletalModel::CalcInterpolatedTranslation(aiVector3D& Out, float Animation
 	unsigned int NextPositionIndex = (PositionIndex + 1);
 	assert(NextPositionIndex < pNodeAnim->mNumPositionKeys);
 
-	// Calcola il delta di tempo, cioè il tempo tra le due keyframe.
+	// Calcola il delta di tempo, cioÃ¨ il tempo tra le due keyframe.
 	float DeltaTime = pNodeAnim->mPositionKeys[NextPositionIndex].mTime - pNodeAnim->mPositionKeys[PositionIndex].mTime;
 
 	// Calcola il fattore di interpolazione.
