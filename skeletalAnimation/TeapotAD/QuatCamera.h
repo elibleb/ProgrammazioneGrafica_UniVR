@@ -5,6 +5,10 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+//implementa una fotocamera utilizzando un quaternione per gestire l'orientamento della fotocamera. Si occupa di gesire la 
+//posizione e l'orientamento usando quaternioni, permette rotazioni, panoramica e zoom, calcola e aggiorna la matrice di vista
+//e proiezione. Utilizzata per applicazioni di grafica dove è necessario spostare e ruotare la visuale della fotocamera.
+
 class QuatCamera 
 {
 public:
