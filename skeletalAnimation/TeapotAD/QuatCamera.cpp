@@ -8,6 +8,10 @@
 #include "defines.h"
 #include <iostream>
 
+//implementa una fotocamera utilizzando un quaternione per gestire l'orientamento della fotocamera. Si occupa di gesire la 
+//posizione e l'orientamento usando quaternioni, permette rotazioni, panoramica e zoom, calcola e aggiorna la matrice di vista
+//e proiezione. Utilizzata per applicazioni di grafica dove è necessario spostare e ruotare la visuale della fotocamera.
+
 //Assi del sistema di coordinate World
 const glm::vec3 WORLDX = glm::vec3(1,0,0);
 const glm::vec3 WORLDY = glm::vec3(0,1,0);
