@@ -1,5 +1,9 @@
 #version 430
 
+//responsabile delle trasformazioni dei vertici di un modello scheletrico animato, tenendo conto delle ossa e dei pesi
+//dei vertici. Applica trasformazioni multiple su ogni osso e le combina tramite i pesi dei verici. Calcola le normali
+//trasformate e prepara i dati del vertice
+
 layout (location = 0) in vec3 VertexPosition; // stream delle posizioni dei vertici  
 layout (location = 1) in vec3 VertexNormal; // stream delle normali dei vertici
 
