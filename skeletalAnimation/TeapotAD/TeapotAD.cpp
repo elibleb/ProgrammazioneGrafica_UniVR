@@ -19,6 +19,9 @@
 #define MOVE_VELOCITY 0.01f
 #define ROTATE_VELOCITY 0.001f
 
+//codice principale: crea finestra che mostra la scena, interazione con l'utente utilizzando il mouse, ciclo principale che si occupa di
+//aggiornare la scena e renderizzarla, sfrutta la telecamera.
+
 //La finestra GLFW
 GLFWwindow *window;
 
@@ -80,7 +83,7 @@ void update( float t )
 	//Ottieni la posizione attuale del cursore
 	glfwGetCursorPos(window,&cursorPositionX,&cursorPositionY);
 
-	// Calcola quanto il cursore si è spostato
+	// Calcola quanto il cursore si Ã¨ spostato
 	float deltaX = (float)(lastCursorPositionX - cursorPositionX);
 	float deltaY = (float)(lastCursorPositionY - cursorPositionY);
 
@@ -88,7 +91,7 @@ void update( float t )
 	if (glfwGetMouseButton(window,GLFW_MOUSE_BUTTON_LEFT) )
 	{
 		//std::cout << "Left button \n";
-		//Ruota la camera. Il valore 0.001f è un modificatore di velocità per rendere la velocità più sensibile
+		//Ruota la camera. Il valore 0.001f Ã¨ un modificatore di velocitÃ  per rendere la velocitÃ  piÃ¹ sensibile
 
 	//	std::cout <<"deltaX " << deltaX << " deltaY " << deltaY << "\n";
 
@@ -100,7 +103,7 @@ void update( float t )
 	if (glfwGetMouseButton(window,GLFW_MOUSE_BUTTON_RIGHT) )
 	{
 		//std::cout << "Right button \n";
-		// Ruota la fotocamera. Il valore 0.01f è un modificatore di velocità per rendere la velocità più sensibile
+		// Ruota la fotocamera. Il valore 0.01f Ã¨ un modificatore di velocitÃ  per rendere la velocitÃ  piÃ¹ sensibile
 		camera.pan(deltaX*MOVE_VELOCITY, deltaY*MOVE_VELOCITY);
 
 	}
