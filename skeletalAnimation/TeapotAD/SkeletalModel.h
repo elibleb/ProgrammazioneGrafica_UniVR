@@ -12,6 +12,10 @@
 #include "Math3D.h"
 #include "glslprogram.h"
 
+//si occupa di gestire l'importazione, la trasformazione e il rendering di modelli 3D scheletrici animati. Usa Assimp per caricare
+//i modelli, gestisce la struttura che tiene traccia delle ossa e delle animazioni, interpolando le trasformazioni tra i keyframe
+//di animazione per ogni osso e applicando queste trasformazioni durante il rendering.
+
 struct VertexStruct 
 {
 	glm::vec3 position; // Posizione del vertice
@@ -68,7 +72,7 @@ struct BoneInfo
 	}
 };
 
-// Un'entrata mesh per ciascuna mesh letta dalla scena Assimp. Un modello di solito è composto da una raccolta di queste.
+// Un'entrata mesh per ciascuna mesh letta dalla scena Assimp. Un modello di solito Ã¨ composto da una raccolta di queste.
 #define INVALID_MATERIAL 0xFFFFFFFF
 struct MeshEntry {
 
