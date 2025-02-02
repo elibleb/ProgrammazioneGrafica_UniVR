@@ -14,6 +14,10 @@
 #include "glslprogram.h"
 #include "SkeletalModel.h"
 
+//definisce la scena dell'applicazione grafica, dove viene animato un modello scheletrico. Il modello viene caricato da un file
+// e viene animato attraverso un sistema di ossa. L'illuminazione e le trasformazioni vengono gestite tramite shader.
+//La scena viene continuamente aggiornata e renderizzata per simulare l'animazione in tempo reale.
+
 using glm::mat4;
 
 class AnimationScene : public Scene
