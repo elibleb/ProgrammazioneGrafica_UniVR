@@ -9,6 +9,9 @@ using std::ios;
 #include <sstream>
 #include <sys/stat.h>
 
+//gestione programmi GLSL. Permette di caricare shader, compilare e collegare programmi, configurare varibili uniform, gestire attributi
+//e uniform e fare devug delle risorse shader
+
 namespace GLSLShaderInfo {
   struct shader_file_extension {
     const char *ext;
@@ -224,7 +227,7 @@ int GLSLProgram::getHandle()
   return handle;
 }
 
-// Verifica se il programma shader Ë stato collegato correttamente
+// Verifica se il programma shader √® stato collegato correttamente
 bool GLSLProgram::isLinked()
 {
   return linked;
@@ -441,7 +444,7 @@ const char * GLSLProgram::getTypeString( GLenum type ) {
   }
 }
 
-// Verifica la validit‡ del programma shader
+// Verifica la validit√† del programma shader
 void GLSLProgram::validate() throw(GLSLProgramException)
 {
   if( ! isLinked() ) 
