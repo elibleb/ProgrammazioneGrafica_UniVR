@@ -1,10 +1,12 @@
 #version 430
 
+//calcola l'illuminazione di un oggetto nello spazio, tenendo conto dell'illuminazione ambientale, diffusa e speculare.
+
 in vec3 vertPos;
 in vec3 N;
 
 uniform vec3 lightPos; // Posizione della luce
-uniform vec3 lightIntensity; // Intensit‡ della luce
+uniform vec3 lightIntensity; // Intensit√† della luce
 uniform vec3 Kd;            // Diffuse reflectivity
 uniform vec3 Ka;	// Ambient reflectivity 
 uniform vec3 Ks;	// Specular reflectivity
