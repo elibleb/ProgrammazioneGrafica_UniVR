@@ -292,7 +292,7 @@ int main()
         lightingShader.setMat4("model", model);
         ourModel.Draw(modelShader); //disegna il modello
 
-        // renderizza le luci nella scena
+        // renderizza oggetti
         modelShader.use();
         modelShader.setMat4("projection", projection);
         modelShader.setMat4("view", view);
