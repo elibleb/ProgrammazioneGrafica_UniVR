@@ -60,7 +60,7 @@ void scroll_callback(GLFWwindow *window, double x, double y)
 /////////////////////////////////////////////////////////////////////////////////////////////
 void initializeGL() {
 
-    gl::ClearColor(0.5f,0.5f,0.5f,1.0f);
+    gl::ClearColor(0.1f,0.1f,0.1f,1.0f);
     
 	lastCursorPositionX=0.0;
 	lastCursorPositionY=0.0;
