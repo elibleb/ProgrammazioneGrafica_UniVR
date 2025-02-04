@@ -230,7 +230,7 @@
 <br><br>
 <img src="MEDIA/2_16.6.png" width="400" heigth="200">
 ### 17. Multiple lights
-#### 17.3  Crea una scena con luci multiple (ambientale, direzionale, spotlight e pointlight)
+#### 17.3  Crea una scena con luci multiple (direzionale, spotlight e pointlight)
 [2_17.3.cpp](2_17.3/2_17.3.cpp)
 <br><br>
 <img src="MEDIA/2_17.3.png" width="400" heigth="200">
