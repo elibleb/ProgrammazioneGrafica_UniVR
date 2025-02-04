@@ -249,7 +249,7 @@
 ## 6. Esercitazione: caricamento modello animato con Assimp
 Riproduce l'animazione scheletale del repository [skeletal_animation_tutorial](https://github.com/dinismf/skeletal_animation_tutorial)
 <br><br>
-<img src="MEDIA/skeletal_animation.gif" width="400" heigth="200">
+<img src="MEDIA/skeletalAnim.gif" width="400" heigth="200">
 
 ## 7. Esercitazione aggiuntiva 1
 [esercitazione1.cpp](esercitazione1/esercitazione1.cpp)
